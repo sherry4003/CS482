@@ -17,22 +17,24 @@ h1{
   <div class="filter">
     <h2>Gaussain filter</h2>
       <p>This project uses the gausian filter apply to images. </p>
-      <p>This can be done by the function cv2.GaussianBlur(). Before applying this function we need to find out the width and height of the kernel which should be positive and odd. We are using sigma = 1 ,2 ,3 respectively with the standard deviation in X and Y directions. </p>
+      <p>First of all, we need to loads an image with a size 512x512 in color or black.</p>
+      <p>This can be done by the function cv2.GaussianBlur(). Before applying this function we need to find out the width and height of the kernel which should be positive and odd. We are using sigma = 1 ,2 ,3 respectively with the standard deviation in X and Y directions. The purpose of the Gaussain blur is to reduce or remove  gaussian noise from the image. </p>
+      <p>Also it applies with cv2.Sobel() to find the derivative of the image</p>
+      <p>The images bellow will show the result of the functions</p>
   </div>
 
-  <div class="city">
-    <h2>Paris</h2>
-      <p>Paris is the capital of France.</p>
-      <p>The Paris area is one of the largest population centers in Europe, with more than 12 million inhabitants.</p>
-  </div>
+  <div class="filter">
+    <h2>Original Image</h2>
 
-  <div class="city">
+  <img src="IMG_9923.gif" width="42" height="42">  </div>
+
+  <div class="filter">
     <h2>Tokyo</h2>
       <p>Tokyo is the capital of Japan.</p>
       <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
   </div>
 
-  <div class="city">
+  <div class="filter">
     <h2>New York</h2>
     <p>The City of New York is the most populous city in the United States.</p>
     <p>New York is an important center for international diplomacy and has been described as the cultural and financial capital of the world.</p>
