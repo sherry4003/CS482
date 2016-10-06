@@ -1,153 +1,50 @@
+<!-- This is the homepage. It introduces about the application - allow user to navigate to other pages e.g. to login page, to user's profide page, and to get-user-input-page, etc.  -->
+<!DOCTYPE html>
 <html>
 <head>
-<title>Welcome to Sherry's Website</title>
-<style >
-        body{
-            margin: 0 auto;
-            background-image:url("simple-wallpapers-picture-niuC.jpg");
-            background-repeat: repeat;
-            background-size: 200% 1000px; 
-        }
-        h1{
-                font-family: Charcoal;
-                font-size:450%;
-                color: #FFA500;
-        }
-        
-        h2{
-                font-family: Charcoal;
-                font-size:150%;
-        }
-        
-        div {
-                padding-right: 20px;
-                padding-left: 20px;
-        }
-        
-        p {
-                font-family: verdana;
-                font-size: 20px;
-                padding-left: 30px;
-        }
-        img {
-                display: block;
-                margin: 0 auto;
-        }
-</style>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Customed CSS file -->
+	<link rel="stylesheet" type="text/css" href="static-files/css/homepage-style.css">
+    <!--Include React-->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/remarkable@1.7.1/dist/remarkable.min.js"></script>
+    <!-- End include React-->
+	<title>MyTimeMaster</title>
 </head>
 <body>
-  <h1 style="text-align:center;">CS482_Projects</h1>
-  <p style="font-size:300%;">Homework1 Filter</p>
-  
-  <div class="filter">
-    <h2>Gaussain filter</h2>
-      <p>This project uses the gausian filter apply to images. </p>
-      <p>First of all, we need to loads an image with a size 512x512 in color or black.</p>
-      <p>This can be done by the function cv2.GaussianBlur(). Before applying this function we need to find out the width and height of the kernel which should be positive and odd. We are using sigma = 1 ,2 ,3 respectively with the standard deviation in X and Y directions. The purpose of the Gaussain blur is to reduce or remove  gaussian noise from the image. </p>
-      <p>Also it applies with cv2.Sobel() to find the derivative of the image</p>
-      <p>The images bellow will show the result of the functions</p>
-  </div>
 
-  <div class="filter">
-    <h2>This is the Original Image</h2>
-    <p>This images have been reduced the size to 512x512</p>
-         <img src="IMG_9923.jpg" width="512" height="512">  </div>
-  </div>
-  
-  <div class="filter">
-    <h2>Gausssian blur with sigma = 1</h2>
-    <p>Fisrt I applied the gaussian blur funtion with the sigma= 1 and the kernel size  7x7</p>
-    <p>This the original image has been smoothed. The blur level of the images are based on the size of kernel</p>
-        <img src="Gaussian Bluring1_processed.png" width="512" height="512">  </div>
-  </div>
-
-  <div class="filter">
-    <h2>Gausssian blur with sigma = 2</h2>
-    <p>with sigma = 2 and the kernel size 13x13 the result of the image shows as below. It become more blurrier.</p>
-        <img src="Gaussian Bluring2_processed.png" width="512" height="512">  </div>
-  </div>
-  
-  <div class="filter">
-    <h2>Gausssian blur with sigma = 3</h2>
-    <p>This time I use sigma 3 and kernel size 19x19</p>
-    <p>The images become even more smoothed then the second one.</p>
-        <img src="Gaussian Bluring3_processed.png" width="512" height="512">
-  </div>
-  
-  <div class="filter">
-    <h2>Gradient-X for original img</h2>
-    <p>Next, I applied Sobel derivative in the horizontal direction of the orignal image </p>
-        <img src="grad_x image_processed.png" width="512" height="512">  
-  </div>
-  
-  <div class="filter">
-    <h2>Gradient-y for original img</h2>
-    <p>I applied Sobel derivative in the vertical direction of the orignal image. </p>
-        <img src="grad_y image_processed.png" width="512" height="512"> 
-  </div>
+<nav>
+  <li><a class="active" href="index.html">Home</a></li>
+</nav>
+<!--The content of the page start here-->
+<div id="content" class="container">
+    <h2 align="center">Welcome to  my Website !!</h2>
+    <p>CS 482 project</p>
+   
     
-     <div class="filter">
-        <h2>Maginitude of the orignal image </h2>
-        <p>After finding the derivative of the vertical and horizontal direction of the original image, blend it with the weight 0.5, we got this result.</p>
-                <img src="mag original image_processed.png" width="512" height="512">  </div>
-    
-  <div class="filter">
-    <h2>Gradient-X for gausBlur1</h2>
-    <p>We repeat finding derivative horizontal direction of the blured image with sigma = 1</p>
-        <img src="grad_x1 image_processed.png" width="512" height="512">
-  </div>
-    
-      <div class="filter">
-         <h2>Gradient-y for gausBlur1</h2>
-        <p>Finding derivative vertical direction of the blured image with sigma = 1</p>
 
-         <img src="grad_y1 image_processed.png" width="512" height="512">  </div>
-  
-    <div class="filter">
-        <h2>Gradient-X for gausBlur2</h2>
-            <p>Here derivative horizontal direction of the blured image with sigma = 2</p>
-                <img src="grad_x2 image_processed.png" width="512" height="512">  </div>
-    
-    <div class="filter">
-        <h2>Gradient-Y for gausBlur2</h2>
-            <p>The derivative vertical direction of the blured image with sigma = 2</p>
+</div>
 
-        <img src="grad_y2image_processed.png" width="512" height="512">  </div>
 
-    <div class="filter">
-         <h2>Gradient-X for gausBlur3</h2>
-                <p>Here derivative horizontal direction of the blured image with sigma = 3</p>
 
-                <img src="grad_x3 image_processed.png" width="512" height="512">  </div>
+<!--Footer -->
+<br/>
+<footer class="container-fluid text-center">
 
-    
-   <div class="filter">
-        <h2>Gradient-Y for gausBlur3</h2>
-                <p>The derivative vertical direction of the blured image with sigma = 3/p>
+    <p>Brought To You From: Binh Dang &copy</p>
+    <!--<p>Brought To You From:Binh Dang &copy</p>-->
+</footer>
+<!--End Footer-->
+<!-- Javascript starts here-->
 
-                <img src="grad_y3 image_processed.png" width="512" height="512">  </div>
-
-    
-  
-    <div class="filter">
-        <h2>Maginitude of the image with gaussian blur signma = 1</h2>
-        <p>Blend the derivative in vertical and horizontal  togther with the equal weight 0.5 of the blured image with sigma=1 we got this image </p>
-         <img src="mag gausblur1 image_processed.png" width="512" height="512">  </div>
-
-    <div class="filter">
-        <h2>Maginitude of the image with gaussian blur signma = 2</h2>
-        <p>Repeat the process of the sobel derivative of blured image with sigma= 2, we got the  result as:</p>
-                <img src="mag gausblur2 image_processed.png" width="512" height="512">  </div>
-
-    <div class="filter">
-        <h2>Maginitude of the image with gaussian blur signma = 3</h2>
-        <p>Again this is the result of sobel derivative </p>
-          <img src="mag gausblur3 image_processed.png" width="512" height="512">  </div>
-
-    <div class="filter">
-         <h2>Edge of image</h2>
-         <p>yThe last image is applied canny edge detector, finding the edge of the image. </p>
-                <img src="edge of image_processed.png" width="512" height="512">  </div>
 </body>
 </html>
-
