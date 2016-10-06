@@ -1,152 +1,147 @@
 <html>
 <head>
-<title>Welcome to Sherry's Website</title>
-<style >
+    <title>Home Work 2 -CS 482</title>
+    <style >
         body{
             margin: 0 auto;
             background-image:url("simple-wallpapers-picture-niuC.jpg");
             background-repeat: repeat;
-            background-size: 200% 1000px; 
+            background-size: 200% 1000px;
         }
         h1{
-                font-family: Charcoal;
-                font-size:450%;
-                color: #FFA500;
+            font-family: Charcoal;
+            font-size:450%;
+            color: #FFA500;
         }
-        
+
         h2{
-                font-family: Charcoal;
-                font-size:150%;
+            font-family: Charcoal;
+            font-size:150%;
         }
-        
+
         div {
-                padding-right: 20px;
-                padding-left: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
         }
-        
+
         p {
-                font-family: verdana;
-                font-size: 20px;
-                padding-left: 30px;
+            font-family: verdana;
+            font-size: 20px;
+            padding-left: 30px;
         }
         img {
-                display: block;
-                margin: 0 auto;
+            display: block;
+            margin: 0 auto;
         }
-</style>
+    </style>
 </head>
 <body>
-  <h1 style="text-align:center;">CS482_Projects</h1>
-  <p style="font-size:300%;">Homework1 Filter</p>
-  
-  <div class="filter">
-    <h2>Gaussain filter</h2>
-      <p>This project uses the gausian filter apply to images. </p>
-      <p>First of all, we need to loads an image with a size 512x512 in color or black.</p>
-      <p>This can be done by the function cv2.GaussianBlur(). Before applying this function we need to find out the width and height of the kernel which should be positive and odd. We are using sigma = 1 ,2 ,3 respectively with the standard deviation in X and Y directions. The purpose of the Gaussain blur is to reduce or remove  gaussian noise from the image. </p>
-      <p>Also it applies with cv2.Sobel() to find the derivative of the image</p>
-      <p>The images bellow will show the result of the functions</p>
-  </div>
+<h1 style="text-align:center;">CS482_Projects</h1>
+<p style="font-size:300%;">Homework 2 Hough Line Transform</p>
 
-  <div class="filter">
-    <h2>This is the Original Image</h2>
-    <p>This images have been reduced the size to 512x512</p>
-         <img src="IMG_9923.jpg" width="512" height="512">  </div>
-  </div>
-  
-  <div class="filter">
-    <h2>Gausssian blur with sigma = 1</h2>
-    <p>Fisrt I applied the gaussian blur funtion with the sigma= 1 and the kernel size  7x7</p>
-    <p>This the original image has been smoothed. The blur level of the images are based on the size of kernel</p>
-        <img src="Gaussian Bluring1_processed.png" width="512" height="512">  </div>
-  </div>
+<div class="houghline">
+    <h2>Hough Transform</h2>
+    <p>In this assignment, we are going to use Hough transform apply to the images. The purple of the Hough transform is used to isolate feature of the particale shape of the images. </p>
+    <p>we use Standard Hough Transform and Probabilistic to dectect the lines of the images. </p>
+    <p>We have choose 5 differnets images to use those two function to detect lines of each images.</p>
+    <p>Each image may have a different parameter value in order to find the correct edge and lines of the images. </p>
+    <p>Before apply Hough line function, we need to use canny edge to detect edge of the image, then use the Hough transform feature with the differnt threshold.</p>
+    <P>There is differnt between standar hough transform line and probabilistic hough transform. The standard hough tranfrom function has 4 parameter arguments, the fouth argument is thershold which mean minimum vote that should get to be considerd as a line. Probabilistic hough transform didn't take all the points, it takes a random subset of the points for the lines detection.as same as standard hough but probabilistc hough has two more
+        parameter which are mininum length of the line and maxium allowed gap between line segments . It will directly return two endpoints of the line instead of standard hough, we need to find all the points. Probabilitis is more easiy and smiple ways to detect lines of the images.
+    </P>
+</div>
 
-  <div class="filter">
-    <h2>Gausssian blur with sigma = 2</h2>
-    <p>with sigma = 2 and the kernel size 13x13 the result of the image shows as below. It become more blurrier.</p>
-        <img src="Gaussian Bluring2_processed.png" width="512" height="512">  </div>
-  </div>
-  
-  <div class="filter">
-    <h2>Gausssian blur with sigma = 3</h2>
-    <p>This time I use sigma 3 and kernel size 19x19</p>
-    <p>The images become even more smoothed then the second one.</p>
-        <img src="Gaussian Bluring3_processed.png" width="512" height="512">
-  </div>
-  
-  <div class="filter">
-    <h2>Gradient-X for original img</h2>
-    <p>Next, I applied Sobel derivative in the horizontal direction of the orignal image </p>
-        <img src="grad_x image_processed.png" width="512" height="512">  
-  </div>
-  
-  <div class="filter">
-    <h2>Gradient-y for original img</h2>
-    <p>I applied Sobel derivative in the vertical direction of the orignal image. </p>
-        <img src="grad_y image_processed.png" width="512" height="512"> 
-  </div>
-    
-     <div class="filter">
-        <h2>Maginitude of the orignal image </h2>
-        <p>After finding the derivative of the vertical and horizontal direction of the original image, blend it with the weight 0.5, we got this result.</p>
-                <img src="mag original image_processed.png" width="512" height="512">  </div>
-    
-  <div class="filter">
-    <h2>Gradient-X for gausBlur1</h2>
-    <p>We repeat finding derivative horizontal direction of the blured image with sigma = 1</p>
-        <img src="grad_x1 image_processed.png" width="512" height="512">
-  </div>
-    
-      <div class="filter">
-         <h2>Gradient-y for gausBlur1</h2>
-        <p>Finding derivative vertical direction of the blured image with sigma = 1</p>
+<div class="hough">
+    <h2>The first image</h2>
+    <p>This images have been reduced the size. Each image has applied with different parameter values. </p>
+    <img src="ST2MainHall4001.jpg" >
 
-         <img src="grad_y1 image_processed.png" width="512" height="512">  </div>
-  
-    <div class="filter">
-        <h2>Gradient-X for gausBlur2</h2>
-            <p>Here derivative horizontal direction of the blured image with sigma = 2</p>
-                <img src="grad_x2 image_processed.png" width="512" height="512">  </div>
-    
-    <div class="filter">
-        <h2>Gradient-Y for gausBlur2</h2>
-            <p>The derivative vertical direction of the blured image with sigma = 2</p>
+    <p> Canny edges </p>
+    <p> In this image I used the canny edge function with two thresholds (upper and lower) (55,95) </p>
+    <img src="Canny edges 1.jpg" >
 
-        <img src="grad_y2image_processed.png" width="512" height="512">  </div>
+    <p> Covert to gray code </p>
+    <img src="Gray 1.jpg" >
 
-    <div class="filter">
-         <h2>Gradient-X for gausBlur3</h2>
-                <p>Here derivative horizontal direction of the blured image with sigma = 3</p>
+    <p> Standard Hough Transform Line. I applied the houghline function with the 4th parameter threshold = 50 </p>
+    <img src="Houghlines 1.jpg" >
 
-                <img src="grad_x3 image_processed.png" width="512" height="512">  </div>
+    <p> Probabilistic Hough Transform Line. </p>
+    <p> Applied with the Probalbilitic function . </p>
+    <p> minLineLength =100,    maxLineGap = 5</p>
+    <p>lines = cv2.HoughLinesP(edges,1,np.pi/180,10,minLineLength,maxLineGap)</p>
+    <img src="Probabilistic Houghlines 1.jpg" >
+</div>
 
-    
-   <div class="filter">
-        <h2>Gradient-Y for gausBlur3</h2>
-                <p>The derivative vertical direction of the blured image with sigma = 3/p>
+<div class="hough">
+    <h2>The second image</h2>
+    <img src="puzzle.jpg" >
 
-                <img src="grad_y3 image_processed.png" width="512" height="512">  </div>
+    <p> Canny edges function with two upper and lower threshold ( 45,100) </p>
+    <img src="Canny edges 2.jpg" >
 
-    
-  
-    <div class="filter">
-        <h2>Maginitude of the image with gaussian blur signma = 1</h2>
-        <p>Blend the derivative in vertical and horizontal  togther with the equal weight 0.5 of the blured image with sigma=1 we got this image </p>
-         <img src="mag gausblur1 image_processed.png" width="512" height="512">  </div>
+    <p> Covert to gray code </p>
+    <img src="Gray 2.jpg" >
 
-    <div class="filter">
-        <h2>Maginitude of the image with gaussian blur signma = 2</h2>
-        <p>Repeat the process of the sobel derivative of blured image with sigma= 2, we got the  result as:</p>
-                <img src="mag gausblur2 image_processed.png" width="512" height="512">  </div>
+    <p> Standard Hough Transform Line. For this images i need to reduce the value of threshold to 10 </p>
+    <img src="Houghlines 2.jpg" >
 
-    <div class="filter">
-        <h2>Maginitude of the image with gaussian blur signma = 3</h2>
-        <p>Again this is the result of sobel derivative </p>
-          <img src="mag gausblur3 image_processed.png" width="512" height="512">  </div>
+    <p> Probabilistic Hough Transform Line. I changed the value of minLinelight = 400 and maxLineGap = 5 </p>
+    <img src="Probabilistic Houghlines 2.jpg" >
+</div>
 
-    <div class="filter">
-         <h2>Edge of image</h2>
-         <p>yThe last image is applied canny edge detector, finding the edge of the image. </p>
-                <img src="edge of image_processed.png" width="512" height="512">  </div>
+<div class="hough">
+    <h2>The thrid image</h2>
+    <img src="ST2MainHall4059.jpg" >
+
+    <p> Canny edges with threshold (50, 100)</p>
+    <img src="Canny edges 3.jpg" >
+
+    <p> Covert to gray code </p>
+    <img src="Gray 3.jpg" >
+
+    <p> Standard Hough Transform Line. The line threshold for this images also set it to 10 </p>
+    <img src="Houghlines 3.jpg" >
+
+    <p> Probabilistic Hough Transform Line. I slightly changed the minLinelength = 100 and keep the maxLineGap the same. </p>
+    <img src="Probabilistic Houghlines 3.jpg" >
+</div>
+
+<div class="hough">
+    <h2>The fouth image</h2>
+    <img src="ST2MainHall4064.jpg" >
+
+    <p> Canny edges. The threshold of the cany edge has been changed to (50,100)</p>
+    <img src="Canny edges 4.jpg" >
+
+    <p> Covert to gray code </p>
+    <img src="Gray 4.jpg" >
+
+    <p> Standard Hough Transform Line. </p>
+    <img src="Houghlines 4.jpg" >
+
+    <p> Probabilistic Hough Transform Line. With the thresholf = 10 , minLineLength = 100,maxLineGap = 5 , the lines of the image has been detected effectively.  </p>
+    <img src="Probabilistic Houghlines 4.jpg" >
+</div>
+
+<div class="hough">
+    <h2>The fith image</h2>
+    <img src="ST2MainHall4018.jpg" >
+
+    <p> Canny edges  </p>
+    <p> edges = cv2.Canny(gray,100,250)</p>
+    <img src="Canny edges 5.jpg" >
+
+    <p> Covert to gray code </p>
+    <img src="Gray 5.jpg" >
+
+    <p> Standard Hough Transform Line  </p>
+    <img src="Houghlines 5.jpg" >
+
+    <p> Probabilistic Hough Transform Line. The threshod has been changed to 50, and 	minLineLength = 200
+        maxLineGap = 5. Unless the lines of the images are not showed. </p>
+    <img src="Probabilistic Houghlines 5.jpg" >
+</div>
+
 </body>
 </html>
