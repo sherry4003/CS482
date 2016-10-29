@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>Home Work 3-CS 482</title>
+    <style >
+        body{
+            margin: 0 auto;
+            background-image:url("simple-wallpapers-picture-niuC.jpg");
+            background-repeat: repeat;
+            background-size: 200% 1000px;
+        }
+        h1{
+            font-family: Charcoal;
+            font-size:450%;
+            color: #FFA500;
+        }
+
+        h2{
+            font-family: Charcoal;
+            font-size:150%;
+        }
+
+        div {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        p {
+            font-family: verdana;
+            font-size: 20px;
+            padding-left: 30px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center;">CS482_Projects</h1>
+<p style="font-size:300%;">Homework Keypoints Matching</p>
+
+<div class="KeyPoint">
+    <h2>Keypoint<2>
+    <p>This image have been called by SIFT function to find the matching keypoint. <p>
+    <img src="images/sift_keypoints1">
+    <img src="images/sift_keypoints2">
+    <img src="images/sift_keypoints3">
+    <img src="images/sift_keypoints4">
+
+</div>
+
+<div class="matching">
+    <h2>Matching</h2>
+    <p>We choose 2 images and try to find matching keypoints of these two, and match them togther.</p>
+    <p> The result of the images have showed as below</p>
+    <p>
+        #keypoints in image1: 120, image2: 124 <br/>
+        #keypoints in image1: 120, image2: 124 <br/>
+        #matches: 120<br/>
+        distance: min: 32.542<br/>
+        distance: mean: 192.552<br/>
+        distance: max: 487.969<br/>
+        #selected matches: 36<br/>
+    </p>
+    
+    <img src="images/Matching images1" >
+
+    <p> Sencond pair matching   </p>
+    <p>This two images have been used the threshold value 0.3 </p>
+    <p>
+        #keypoints in image1: 307, image2: 339 <br/>
+        #keypoints in image1: 307, image2: 339 <br/>
+        #matches: 307 <br/>
+        distance: min: 38.691 <br/>
+        distance: mean: 256.071 <br/>
+        distance: max: 428.852 <br/>
+        #selected matches: 12 <br/>
+    </p>
+    <img src="images/Matching images2" >
+
+    <p>Third pair of matching with threshold 0.6 </p>
+     <p> 
+        #keypoints in image1: 116, image2: 114 <br/>
+        #keypoints in image1: 116, image2: 114 <br/>
+        #matches: 116<br/>
+        distance: min: 26.420<br/>
+        distance: mean: 284.642<br/>
+        distance: max: 455.920 <br/>
+        #selected matches: 12 <br/>
+     </p>
+    <img src="images/Matching images3" >
+
+  </div>
+
+
+
+</body>
+</html>
